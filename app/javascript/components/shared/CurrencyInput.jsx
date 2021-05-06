@@ -6,7 +6,11 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask'
 class CurrencyInput extends React.Component {
   handleChange = (e) => {
     if (!this.props.onChange) { return; }
+<<<<<<< HEAD
     const num = e.target.value.replace(/\₱|,/g, '');
+=======
+    const num = e.target.value.replace(/\$|,/g, '');
+>>>>>>> e5e8ffd3dd95d35459375c3ea17f88f184036fea
     const cents = parseInt(parseFloat(num).toFixed(2).replace(/\./g, ""))
     const normalized = isNaN(cents) ? 0 : cents;
     this.props.onChange(normalized);
@@ -14,7 +18,11 @@ class CurrencyInput extends React.Component {
 
   handleBlur = (e) => {
     if (!this.props.onBlur) { return; }
+<<<<<<< HEAD
     const num = e.target.value.replace(/\₱|,/g, '');
+=======
+    const num = e.target.value.replace(/\$|,/g, '');
+>>>>>>> e5e8ffd3dd95d35459375c3ea17f88f184036fea
     const cents = parseInt(parseFloat(num).toFixed(2).replace(/\./g, ""))
     const normalized = isNaN(cents) ? 0 : cents;
     this.props.onBlur(normalized);
@@ -22,7 +30,11 @@ class CurrencyInput extends React.Component {
 
   render() {
     const defaultMaskOptions = {
+<<<<<<< HEAD
       prefix: '₱',
+=======
+      prefix: '$',
+>>>>>>> e5e8ffd3dd95d35459375c3ea17f88f184036fea
       includeThousandsSeparator: true,
       thousandsSeparatorSymbol: ',',
       allowDecimal: true,

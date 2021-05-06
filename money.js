@@ -25,16 +25,27 @@
 
 	// fxSetup can be defined before loading money.js, to set the exchange rates and the base
 	// (and default from/to) currencies - or the rates can be loaded in later if needed.
-	var fxSetup = root.fxSetup || {
-		rates : {},
-		base : ""
+	var fxSetup = {
+		from : "USD",
+		to : "PHP",
+		base : "USD",
+		rates : {
+			"PHP" : 1,
+			"USD" : 1.
+		},
+		
 	};
 
 	// Object containing exchange rates relative to the fx.base currency, eg { "GBP" : "0.64" }
 	fx.rates = fxSetup.rates;
+	fx.rates = {
+		"PHP" : 1,
+		"USD" : 1,
+	}
 
 	// Default exchange rate base currency (eg "USD"), which all the exchange rates are relative to
 	fx.base = fxSetup.base;
+	fx.base = "USD";
 
 	// Default from / to currencies for conversion via fx.convert():
 	fx.settings = {
